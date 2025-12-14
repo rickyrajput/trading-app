@@ -1,0 +1,12 @@
+<script>
+  window.addEventListener("load", function () {
+    try {
+      window.parent.postMessage(
+        { type: "VERIZON_CPNI_READY" },
+        "*"
+      );
+    } catch (e) {
+      console.error("CPNI HTML load notify failed", e);
+    }
+  });
+</script>
