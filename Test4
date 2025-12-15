@@ -1,0 +1,14 @@
+.desc{
+  margin: 0;
+  font-size: 16px;
+  color: #444b55;
+
+  white-space: nowrap;      /* single line */
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  text-align: left;         /* force left-to-right */
+  direction: ltr;           /* important in CRM */
+  display: block;
+  width: 100%;
+}
