@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Notifications</title>
+  <style>
+    :root{
+      --border:#cfcfd6;
+      --text:#1f2328;
+      --muted:#6b7280;
+      --bg:#ffffff;
+    }
+
+    body{
+      margin:24px;
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      color:var(--text);
+      background:#f7f7fb;
+    }
+
+    .card{
+      width: 720px;
+      max-width: 100%;
+      background:var(--bg);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:14px 14px 10px;
+      box-sizing:border-box;
+    }
+
+    .card-header{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:8px;
+    }
+
+    .dot{
+      width:12px; height:12px;
+      border-radius:50%;
+      background:#d83b01; /* red dot */
+      flex:0 0 auto;
+    }
+
+    .title{
+      font-weight:700;
+      font-size:18px;
+    }
+    .total{
+      color:var(--muted);
+      font-weight:600;
+      margin-left:6px;
+      font-size:14px;
+    }
+
+    .list{
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+
+    .item{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 6px;
+      border-top:1px solid #ececf2;
+    }
+    .item:first-child{ border-top:none; }
+
+    .left{
+      min-width:0;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+
+    .pill{
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      line-height:1;
+      margin-top:2px;
+      white-space:nowrap;
+      border:1px solid transparent;
+    }
+    .pill.info{    background:#e7f0ff; color:#1a5bd7; border-color:#cfe0ff; }
+    .pill.success{ background:#e8f7ee; color:#107c41; border-color:#cdeed9; }
+    .pill.warning{ background:#fff4e5; color:#8a4b00; border-color:#ffe2b8; }
+    .pill.error{   background:#fde7e9; color:#a4262c; border-color:#f6c7cc; }
+
+    .text{
+      min-width:0;
+    }
+    .headline{
+      font-weight:800;
+      font-size:18px;
+      margin:0 0 4px 0;
+    }
+    .desc{
+      margin:0;
+      color:#444b55;
+      font-size:16px;
+    }
+
+    .time{
+      color:var(--muted);
+      font-size:14px;
+      white-space:nowrap;
+      padding-top:4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="card-header">
+      <span class="dot" aria-hidden="true"></span>
+      <div class="title">Notifications <span class="total">4 total</span></div>
+    </div>
+
+    <ul class="list">
+      <li class="item">
+        <div class="left">
+          <span class="pill info">Information</span>
+          <div class="text">
+            <p class="headline">Heads up</p>
+            <p class="desc">Policy updates effective next Monday.</p>
+          </div>
+        </div>
+        <div class="time">Today · 9:12 AM</div>
+      </li>
+
+      <li class="item">
+        <div class="left">
+          <span class="pill success">Success</span>
+          <div class="text">
+            <p class="headline">Sync complete</p>
+            <p class="desc">Customer records synced (1,204 items).</p>
+          </div>
+        </div>
+        <div class="time">Today · 8:30 AM</div>
+      </li>
+
+      <li class="item">
+        <div class="left">
+          <span class="pill warning">Warning</span>
+          <div class="text">
+            <p class="headline">Maintenance</p>
+            <p class="desc">Planned downtime tonight 10:00–10:30 PM.</p>
+          </div>
+        </div>
+        <div class="time">Yesterday · 3:02 PM</div>
+      </li>
+
+      <li class="item">
+        <div class="left">
+          <span class="pill error">Error</span>
+          <div class="text">
+            <p class="headline">API failure</p>
+            <p class="desc">Reporting service returned 503 for /api/daily.</p>
+          </div>
+        </div>
+        <div class="time">Yesterday · 4:47 PM</div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
