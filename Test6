@@ -1,0 +1,13 @@
+.bannerDesc{
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: #444b55;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  text-align: left;
+  direction: ltr;
+  width: 100%;
+}
