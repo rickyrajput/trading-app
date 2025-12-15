@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Notifications</title>
+
+  <!-- Fluent UI Web Components (Microsoft) -->
+  <script type="module" src="https://unpkg.com/@fluentui/web-components@3/dist/web-components.min.js"></script>
+
+  <style>
+    :root {
+      /* Let Fluent handle colors; we only do layout + spacing */
+      font-family: "Segoe UI", SegoeUI, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: transparent;
+      color: var(--neutral-foreground-rest, #1f2937);
+    }
+
+    /* Card container */
+    .card {
+      width: 520px;
+      max-width: 100%;
+      box-sizing: border-box;
+      padding: 14px 16px 10px 16px;
+      border-radius: 12px;
+
+      /* Fluent-ish elevation & border */
+      border: 1px solid var(--neutral-stroke-rest, #d1d5db);
+      background: var(--neutral-layer-1, #ffffff);
+      box-shadow: 0 1px 2px rgba(0,0,0,.06);
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: var(--palette-red-border-active, #b91c1c);
+      box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.10);
+      flex: 0 0 auto;
+    }
+
+    .header-title {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .header-title h2 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.1;
+      font-weight: 600;
+      color: var(--palette-red-foreground-2, #b91c1c);
+    }
+
+    .count {
+      font-size: 13px;
+      color: var(--neutral-foreground-hint, #6b7280);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* List rows */
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 8px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 12px;
+      padding: 10px 0;
+      border-top: 1px solid var(--neutral-stroke-divider-rest, #eceef1);
+      align-items: start;
+    }
+
+    .row:first-child {
+      border-top: 0;
+      padding-top: 6px;
+    }
+
+    .content {
+      min-width: 0;
+    }
+
+    .headline {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--neutral-foreground-rest, #111827);
+    }
+
+    .message {
+      margin: 2px 0 0 0;
+      font-size: 16px;
+      line-height: 1.25;
+      color: var(--neutral-foreground-rest, #111827);
+      word-break: break-word;
+    }
+
+    .time {
+      margin-top: 4px;
+      font-size: 13px;
+      color: var(--neutral-foreground-hint, #6b7280);
+      white-space: nowrap;
+    }
+
+    /* Badge sizing to match screenshot */
+    fluent-badge {
+      margin-top: 2px;
+      --badge-padding: 4px 10px;
+      --badge-border-radius: 999px;
+      font-weight: 600;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="card" aria-label="Notifications">
+    <header class="header">
+      <span class="dot" aria-hidden="true"></span>
+
+      <div class="header-title">
+        <h2>Notifications</h2>
+        <span class="count">4 total</span>
+      </div>
+    </header>
+
+    <div class="list" role="list">
+      <!-- Row 1 -->
+      <div class="row" role="listitem">
+        <fluent-badge appearance="filled" color="brand">Information</fluent-badge>
+        <div class="content">
+          <p class="headline">Heads up</p>
+          <p class="message">Policy updates effective next Monday.</p>
+        </div>
+        <div class="time">Today · 9:12 AM</div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="row" role="listitem">
+        <fluent-badge appearance="filled" color="success">Success</fluent-badge>
+        <div class="content">
+          <p class="headline">Sync complete</p>
+          <p class="message">Customer records synced (1,204 items).</p>
+        </div>
+        <div class="time">Today · 8:30 AM</div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="row" role="listitem">
+        <fluent-badge appearance="filled" color="warning">Warning</fluent-badge>
+        <div class="content">
+          <p class="headline">Maintenance</p>
+          <p class="message">Planned downtime tonight 10:00–10:30 PM.</p>
+        </div>
+        <div class="time">Yesterday · 5:02 PM</div>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="row" role="listitem">
+        <fluent-badge appearance="filled" color="danger">Error</fluent-badge>
+        <div class="content">
+          <p class="headline">API failure</p>
+          <p class="message">Reporting service returned 503 for /api/daily.</p>
+        </div>
+        <div class="time">Monday · 4:47 PM</div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
