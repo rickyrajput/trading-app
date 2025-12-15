@@ -1,0 +1,100 @@
+<div class="card">
+  <div class="item">
+    <div class="left">
+      <span id="dot" class="dot" aria-hidden="true"></span>
+      <span class="pill info">Information</span>
+
+      <div class="text">
+        <p id="bannermsg" class="bannerTitle">Heads up</p>
+        <p id="bannerextmsg" class="bannerDesc">Policy updates effective next Monday.</p>
+      </div>
+    </div>
+
+    <div class="time">Today · 9:12 AM</div>
+  </div>
+</div>
+
+*{ box-sizing: border-box; }
+
+.card{
+  width: 100%;
+  background: #fff;
+  border: 1px solid #d9d9e3;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.item{
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.left{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;           /* IMPORTANT for ellipsis */
+  flex: 1;
+}
+
+.dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d83b01;    /* default red, your JS can override */
+  margin-top: 6px;
+  flex: 0 0 auto;
+}
+
+.pill{
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.pill.info{
+  background: #e7f0ff;
+  color: #1a5bd7;
+  border: 1px solid #cfe0ff;
+}
+
+.text{
+  min-width: 0;          /* IMPORTANT for ellipsis */
+  flex: 1;
+}
+
+.bannerTitle{
+  margin: 0;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.bannerDesc{
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: #444b55;
+
+  /* Single line, left-to-right */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  direction: ltr;
+}
+
+.time{
+  white-space: nowrap;
+  color: #6b7280;
+  font-size: 13px;
+  padding-top: 4px;
+  flex: 0 0 auto;
+}
